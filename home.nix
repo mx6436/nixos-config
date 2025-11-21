@@ -20,7 +20,6 @@
     fastfetch
     starship
     eza
-    gh
   ];
 
   # Let Home Manager install and manage itself.
@@ -31,9 +30,6 @@
     settings = {
       user.name = "mx6436";
       user.email = "mx6436@foxmail.com";
-    };
-    extraConfig = {
-      credential.helper = "gh auth git-credential";
     };
   };
 
