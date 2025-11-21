@@ -16,6 +16,11 @@
       url = "github:nix-community/lanzaboote/v0.4.3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     # NOTE: 'nixos' is the default hostname
@@ -34,6 +39,18 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.mx = ./home.nix;
+        }
+
+        # AAGL
+        {
+          imports = [ inputs.aagl.nixosModules.default ];
+          # nix.settings = inputs.aagl.nixConfig; # Set up Cachix
+          # programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
+          # programs.anime-games-launcher.enable = true;
+          programs.honkers-railway-launcher.enable = true;
+          # programs.honkers-launcher.enable = true;
+          # programs.wavey-launcher.enable = true;
+          # programs.sleepy-launcher.enable = true;
         }
       ];
     };
