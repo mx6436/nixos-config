@@ -26,10 +26,15 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.git.enable = true;
-  programs.git.settings = {
-    user.name = "mx6436";
-    user.email = "mx6436@foxmail.com";
+  programs.git = {
+    enable = true;
+    settings = {
+      user.name = "mx6436";
+      user.email = "mx6436@foxmail.com";
+    };
+    extraConfig = {
+      credential.helper = "gh auth git-credential";
+    };
   };
 
   # launch fish unless the parent process is already fish
