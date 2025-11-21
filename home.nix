@@ -20,6 +20,8 @@
     fastfetch
     starship
     eza
+    wechat
+    qq
   ];
 
   # Let Home Manager install and manage itself.
