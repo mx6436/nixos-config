@@ -22,6 +22,7 @@
     eza
     wechat
     qq
+    gamemode
   ];
 
   # Let Home Manager install and manage itself.
