@@ -20,6 +20,7 @@
     fastfetch
     starship
     eza
+    gh
   ];
 
   # Let Home Manager install and manage itself.
