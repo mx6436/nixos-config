@@ -3,7 +3,9 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { config, lib, pkgs, inputs, ... }:
-
+let
+  lanzaboote = inputs.lanzaboote;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -23,9 +25,19 @@
     fileSystems = [ "/" ];
   };
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  # # Use the systemd-boot EFI boot loader.
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
 
   # do not need to keep too much generations
   boot.loader.systemd-boot.configurationLimit = 10;
@@ -145,10 +157,12 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    inputs.helix.packages."${pkgs.system}".helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     rustup
     clash-verge-rev
+
+    sbctl # For debugging and troubleshooting Secure Boot.
 
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor

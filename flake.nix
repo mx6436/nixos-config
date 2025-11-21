@@ -12,8 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # helix editor, use the master branch
-    helix.url = "github:helix-editor/helix/master";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     # NOTE: 'nixos' is the default hostname
@@ -21,6 +23,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+
+        inputs.lanzaboote.nixosModules.lanzaboote
 
         # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
