@@ -105,9 +105,6 @@ in
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -125,6 +122,9 @@ in
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  # onedrive by abraunegg
+  services.onedrive.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mx = {
@@ -153,7 +153,6 @@ in
   programs.thunderbird.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
-  programs.onedrive.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
