@@ -150,6 +150,8 @@ in
     tunMode = true;
     autoStart = true;
   };
+
+  programs.gamemode.enable = true;
   programs.thunderbird.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;

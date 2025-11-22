@@ -22,7 +22,6 @@
     eza
     wechat
     qq
-    gamemode
     mangohud
   ];
 
