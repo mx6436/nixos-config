@@ -23,6 +23,7 @@
     wechat
     qq
     gamemode
+    mangohud
   ];
 
   # Let Home Manager install and manage itself.
