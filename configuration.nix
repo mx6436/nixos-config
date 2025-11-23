@@ -105,6 +105,11 @@ in
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  services.displayManager = {
+  	autoLogin.enable = true;
+  	autoLogin.user = 'mx';
+  }
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
