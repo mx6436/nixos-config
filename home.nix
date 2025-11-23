@@ -23,7 +23,7 @@
     wechat
     qq
     mangohud
-    wl-cllipboard
+    wl-clipboard
   ];
 
   # Let Home Manager install and manage itself.

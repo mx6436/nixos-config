@@ -107,8 +107,8 @@ in
 
   services.displayManager = {
   	autoLogin.enable = true;
-  	autoLogin.user = 'mx';
-  }
+  	autoLogin.user = "mx";
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
