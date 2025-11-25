@@ -24,6 +24,7 @@
     qq
     mangohud
     wl-clipboard
+    splayer
   ];
 
   # Let Home Manager install and manage itself.
