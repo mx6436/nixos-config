@@ -120,7 +120,7 @@ in
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  services.rtkit.enable = true;
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
