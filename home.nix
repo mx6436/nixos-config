@@ -25,6 +25,7 @@
     mangohud
     wl-clipboard
     splayer
+    typora
   ];
 
   # Let Home Manager install and manage itself.
