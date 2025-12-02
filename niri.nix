@@ -1,10 +1,11 @@
-{ niri, ... }:
+{ config, pkgs, niri, ... }:
 
 {
   imports = [ niri.homeModules.niri ];
   
   programs.niri = {
     enable = true;
+    package = pkgs.niri-unstable;
 
     settings = {
       input.mouse.accel-profile = "flat";
