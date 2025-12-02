@@ -177,6 +177,10 @@ in
 
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor
+
+    niri-unstable
+    alacritty
+    fuzzel
   ];
 
   # environment.variables.EDITOR = "hx";

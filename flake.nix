@@ -33,7 +33,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }: {
+
+  outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }:
+  let
+    nixpkgs.overlays = [ niri.overlays.niri ];
+  in
+  {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
