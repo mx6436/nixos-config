@@ -178,7 +178,8 @@ in
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor
   ];
-  environment.variables.EDITOR = "hx";
+
+  # environment.variables.EDITOR = "hx";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
