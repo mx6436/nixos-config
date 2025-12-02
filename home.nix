@@ -32,6 +32,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # import niri configuration file
+  xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
+
   programs.git = {
     enable = true;
     settings = {
