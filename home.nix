@@ -26,6 +26,7 @@
     wl-clipboard
     splayer
     typora
+    lutris
   ];
 
   # Let Home Manager install and manage itself.
