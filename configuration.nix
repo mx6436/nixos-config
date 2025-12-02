@@ -177,8 +177,6 @@ in
 
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor
-
-    xwayland-satellite # xwayland support
   ];
 
   # environment.variables.EDITOR = "hx";
