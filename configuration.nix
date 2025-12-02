@@ -7,6 +7,8 @@ let
   lanzaboote = inputs.lanzaboote;
 in
 {
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
