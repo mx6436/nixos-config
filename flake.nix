@@ -35,9 +35,6 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }:
-  let
-    nixpkgs.overlays = [ niri.overlays.niri ];
-  in
   {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
