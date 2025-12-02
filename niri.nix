@@ -1,7 +1,7 @@
-{ config, inputs, ... }:
+{ niri, ... }:
 
 {
-  imports = [ inputs.niri.homeModules.niri ];
+  imports = [ niri.homeModules.niri ];
   
   programs.niri = {
     enable = true;
