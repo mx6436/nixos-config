@@ -53,7 +53,7 @@ in
   '';
   boot.kernelModules = [ "hid_apple" ];
 
-
+  hardware.bluetooth.enable = true;
   
   networking.hostName = "nixos"; # Define your hostname.
 
@@ -111,6 +111,9 @@ in
   	autoLogin.enable = true;
   	autoLogin.user = "mx";
   };
+
+  service.tuned.enable = true;
+  service.upower.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
