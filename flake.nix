@@ -42,6 +42,8 @@
       modules = [
         ./configuration.nix
 
+        niri.nixosModules.niri
+        
         inputs.lanzaboote.nixosModules.lanzaboote
 
         # 将 home-manager 配置为 nixos 的一个 module
@@ -50,7 +52,7 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit niri; };
+            home-manager.extraSpecialArgs = inputs;
             home-manager.users.mx = {
               imports = [
                 ./home.nix

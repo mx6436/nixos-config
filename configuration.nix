@@ -144,6 +144,10 @@ in
     ];
   };
 
+  # Niri
+  programs.niri.enable = true;
+  programs.niri.package = pkgs.niri-unstable;
+
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 
@@ -180,7 +184,6 @@ in
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor
 
-    niri-unstable
     alacritty
     fuzzel
   ];
