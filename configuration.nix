@@ -112,8 +112,8 @@ in
   	autoLogin.user = "mx";
   };
 
-  service.tuned.enable = true;
-  service.upower.enable = true;
+  services.tuned.enable = true;
+  services.upower.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";

@@ -34,7 +34,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, niri, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, niri, noctalia, ... }:
   {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
