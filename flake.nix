@@ -57,6 +57,7 @@
               imports = [
                 ./home.nix
                 ./niri.nix
+                ./noctalia.nix
               ];
             };
         }
