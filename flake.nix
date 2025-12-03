@@ -18,32 +18,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, niri, noctalia, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-
-        niri.nixosModules.niri
-        
+      
         inputs.lanzaboote.nixosModules.lanzaboote
 
         # 将 home-manager 配置为 nixos 的一个 module
@@ -52,12 +40,9 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
             home-manager.users.mx = {
               imports = [
                 ./home.nix
-                ./niri.nix
-                ./noctalia.nix
               ];
             };
         }
