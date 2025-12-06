@@ -32,6 +32,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
+
   programs.git = {
     enable = true;
     settings = {
