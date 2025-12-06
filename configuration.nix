@@ -2,10 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
-let
-  lanzaboote = inputs.lanzaboote;
-in
+{ config, lib, pkgs, ... }:
+
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -33,11 +31,6 @@ in
   # # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-  };
 
   # do not need to keep too much generations
   boot.loader.systemd-boot.configurationLimit = 10;

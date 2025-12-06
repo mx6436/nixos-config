@@ -18,13 +18,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Automatic CPU speed & power optimizer for Linux
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, ... }:
   {
     # NOTE: 'nixos' is the default hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -33,10 +39,16 @@
         ./configuration.nix
       
         inputs.lanzaboote.nixosModules.lanzaboote
+        {
+          boot.lanzaboote = {
+            enable = true;
+            pkiBundle = "/var/lib/sbctl";
+          };
+        }
 
         # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
-        home-manager.nixosModules.home-manager
+        inputs.home-manager.nixosModules.home-manager
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -47,10 +59,14 @@
             };
         }
 
-        # AAGL
+        inputs.auto-cpufreq.nixosModules.default
         {
-          imports = [ inputs.aagl.nixosModules.default ];
-          # nix.settings = inputs.aagl.nixConfig; # Set up Cachix
+          programs.auto-cpufreq.enable = true;          
+        }
+
+        inputs.aagl.nixosModules.default
+        {
+          nix.settings = inputs.aagl.nixConfig; # Set up Cachix
           # programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
           # programs.anime-games-launcher.enable = true;
           programs.honkers-railway-launcher.enable = true;
