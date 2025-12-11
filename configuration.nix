@@ -95,13 +95,13 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  # services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = true;
   # services.desktopManager.gnome.enable = true;
 
-  # services.displayManager = {
-  # 	autoLogin.enable = true;
-  # 	autoLogin.user = "mx";
-  # };
+  services.displayManager = {
+  	autoLogin.enable = true;
+  	autoLogin.user = "mx";
+  };
 
   services.tuned.enable = true;
   services.upower.enable = true;
@@ -178,11 +178,14 @@
     # gnomeExtensions.appindicator
     # gnomeExtensions.system-monitor
 
+    xwayland-satellite
     alacritty
-    fuzzel
   ];
 
-  environment.variables.EDITOR = "hx";
+  environment.variables = {
+    EDITOR = "hx";
+    GTK_IM_MODULE = lib.mkForce "";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

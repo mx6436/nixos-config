@@ -19,10 +19,10 @@
   home.packages = with pkgs; [
     starship
     eza
+    nixd
     wechat
     qq
     mangohud
-    wl-clipboard
     splayer
     typora
     lutris
@@ -34,6 +34,13 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
   };
 
   programs.git = {
@@ -80,6 +87,11 @@
           alias la 'eza -la --group-directories-first --icons=auto'
       end
     '';
+  };
+
+  programs.alacritty = {
+    enable = true;
+    theme = "tokyo_night";
   };
 
   programs.helix = {

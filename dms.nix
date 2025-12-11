@@ -11,7 +11,7 @@
 
     niri = {
       enableKeybinds = true;
-      enableSpawn = true;
+      # enableSpawn = true;
     };
 
     systemd = {
