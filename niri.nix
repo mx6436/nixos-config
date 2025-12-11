@@ -98,6 +98,7 @@
       # 应用程序启动
       "Mod+T".action.spawn = "alacritty";
       "Mod+A".action.spawn = "firefox";
+      "Mod+E".action.spawn = "nautilus";
 
       # 窗口与工作区管理 - 基础
       "Mod+O" = {

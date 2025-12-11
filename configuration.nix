@@ -180,6 +180,7 @@
 
     xwayland-satellite
     alacritty
+    nautilus
   ];
 
   environment.variables = {
