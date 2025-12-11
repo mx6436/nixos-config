@@ -95,13 +95,13 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
-  services.displayManager = {
-  	autoLogin.enable = true;
-  	autoLogin.user = "mx";
-  };
+  # services.displayManager = {
+  # 	autoLogin.enable = true;
+  # 	autoLogin.user = "mx";
+  # };
 
   services.tuned.enable = true;
   services.upower.enable = true;
@@ -175,8 +175,8 @@
 
     sbctl # For debugging and troubleshooting Secure Boot.
 
-    gnomeExtensions.appindicator
-    gnomeExtensions.system-monitor
+    # gnomeExtensions.appindicator
+    # gnomeExtensions.system-monitor
 
     alacritty
     fuzzel
