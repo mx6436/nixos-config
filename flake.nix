@@ -29,9 +29,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+    dgop = {
+      url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
     };
 
     aagl = {
@@ -48,11 +54,6 @@
       modules = [
         ./configuration.nix
 
-        inputs.niri.nixosModules.niri
-        {
-          nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-        }
-
         inputs.lanzaboote.nixosModules.lanzaboote
         {
           boot.lanzaboote = {
@@ -67,12 +68,12 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = inputs;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.mx = {
               imports = [
                 ./home.nix
                 ./niri.nix
-                ./noctalia.nix
+                ./dms.nix
               ];
             };
         }
@@ -80,6 +81,12 @@
         inputs.auto-cpufreq.nixosModules.default
         {
           programs.auto-cpufreq.enable = true;
+        }
+
+        inputs.niri.nixosModules.niri
+        {
+          nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+          systemd.user.services.niri-flake-polkit.enable = false; # Disable niri-flake's default polkit agent to avoid conflicts
         }
 
         inputs.aagl.nixosModules.default
