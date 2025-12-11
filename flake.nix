@@ -18,12 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Automatic CPU speed & power optimizer for Linux
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,11 +70,6 @@
                 ./dms.nix
               ];
             };
-        }
-
-        inputs.auto-cpufreq.nixosModules.default
-        {
-          programs.auto-cpufreq.enable = true;
         }
 
         inputs.niri.nixosModules.niri
