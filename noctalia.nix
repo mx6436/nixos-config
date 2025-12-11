@@ -1,4 +1,4 @@
-{ config, pkgs, noctalia, ... }:
+{ noctalia, ... }:
 
 {
   imports = [ noctalia.homeModules.default ];

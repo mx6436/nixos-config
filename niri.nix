@@ -1,4 +1,4 @@
-{ config, pkgs, niri, ... }:
+{ ... }:
 
 {
   programs.niri.settings = {

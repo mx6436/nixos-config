@@ -2,11 +2,9 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -136,8 +134,8 @@
   users.users.mx = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "gamemode" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 
   # Niri

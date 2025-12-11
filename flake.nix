@@ -23,12 +23,12 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,7 +49,10 @@
         ./configuration.nix
 
         inputs.niri.nixosModules.niri
-        
+        {
+          nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+        }
+
         inputs.lanzaboote.nixosModules.lanzaboote
         {
           boot.lanzaboote = {
@@ -76,7 +79,7 @@
 
         inputs.auto-cpufreq.nixosModules.default
         {
-          programs.auto-cpufreq.enable = true;          
+          programs.auto-cpufreq.enable = true;
         }
 
         inputs.aagl.nixosModules.default

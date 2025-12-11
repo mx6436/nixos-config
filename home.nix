@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -17,7 +17,6 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    fastfetch
     starship
     eza
     wechat
