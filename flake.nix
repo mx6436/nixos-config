@@ -23,6 +23,16 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
@@ -37,7 +47,9 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
-      
+
+        inputs.niri.nixosModules.niri
+        
         inputs.lanzaboote.nixosModules.lanzaboote
         {
           boot.lanzaboote = {
@@ -52,9 +64,12 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = inputs;
             home-manager.users.mx = {
               imports = [
                 ./home.nix
+                ./niri.nix
+                ./noctalia.nix
               ];
             };
         }

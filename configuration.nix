@@ -5,6 +5,8 @@
 { config, lib, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -138,6 +140,10 @@
     ];
   };
 
+  # Niri
+  programs.niri.enable = true;
+  programs.niri.package = pkgs.niri-unstable;
+
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 
@@ -173,6 +179,9 @@
 
     gnomeExtensions.appindicator
     gnomeExtensions.system-monitor
+
+    alacritty
+    fuzzel
   ];
 
   environment.variables.EDITOR = "hx";
