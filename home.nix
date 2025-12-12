@@ -25,7 +25,7 @@
     mangohud
     splayer
     typora
-    lutris
+    heroic
   ];
 
   # Let Home Manager install and manage itself.
