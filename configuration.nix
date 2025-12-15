@@ -172,6 +172,7 @@
     rustup
     sbctl # For debugging and troubleshooting Secure Boot.
 
+    wl-clipboard
     xwayland-satellite
     clash-verge-rev
     alacritty

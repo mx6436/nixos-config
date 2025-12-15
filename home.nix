@@ -26,6 +26,8 @@
     splayer
     typora
     heroic
+    papers
+    qgis saga
   ];
 
   # Let Home Manager install and manage itself.
