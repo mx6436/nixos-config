@@ -174,7 +174,6 @@
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     rustup
-    sbctl # For debugging and troubleshooting Secure Boot.
 
     wl-clipboard
     xwayland-satellite
