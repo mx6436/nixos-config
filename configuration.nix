@@ -103,6 +103,8 @@
   	autoLogin.user = "mx";
   };
 
+  services.gvfs.enable = true; # For nautilus trash
+
   services.tuned.enable = true;
   services.upower.enable = true;
 
