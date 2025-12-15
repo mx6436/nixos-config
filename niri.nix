@@ -14,13 +14,13 @@
     };
 
     layout = {
-      gaps = 5;
+      gaps = 3;
       background-color = "transparent";
       always-center-single-column = true;
 
       focus-ring = {
-        width = 4;
-        active = { color = "#a6e3a1"; };
+        width = 2;
+        active = { color = "#b4befe"; };
         inactive = { color = "#505050"; };
         urgent = { color = "#9b0000"; };
       };
