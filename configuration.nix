@@ -83,7 +83,8 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
-    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.caskaydia-mono
   ];
   fonts.fontconfig = {
     defaultFonts = {
@@ -164,6 +165,7 @@
   programs.gamemode.enable = true;
   programs.thunderbird.enable = true;
   programs.firefox.enable = true;
+  programs.dconf.enable = true;
   programs.fish.enable = true;
 
   # List packages installed in system profile.
