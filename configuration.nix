@@ -180,6 +180,9 @@
     clash-verge-rev
     alacritty
     nautilus
+    gnome-text-editor
+    libreoffice-qt-fresh
+    hunspell hunspellDicts.en_US # Spellcheck
   ];
 
   environment.variables = {
