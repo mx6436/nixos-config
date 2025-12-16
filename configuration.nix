@@ -187,7 +187,12 @@
 
   environment.variables = {
     EDITOR = "hx";
-    GTK_IM_MODULE = lib.mkForce "";
+
+    # Default settings are GTK_IM_MODULE=fcitx
+    # fcitx5 recommends not to set this variable with wayland compositor
+    # but niri has a bug which disables the pop-up menus
+    # See https://github.com/YaLTeR/niri/issues/454
+    # GTK_IM_MODULE = lib.mkForce "";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
