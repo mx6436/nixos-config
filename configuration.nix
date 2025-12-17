@@ -85,6 +85,7 @@
     noto-fonts-color-emoji
     nerd-fonts.caskaydia-cove
     nerd-fonts.caskaydia-mono
+    corefonts
   ];
   fonts.fontconfig = {
     defaultFonts = {

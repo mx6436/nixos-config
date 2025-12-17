@@ -25,7 +25,7 @@
     mangohud
     splayer
     typora
-    heroic
+    lutris
     papers
     qgis saga
   ];
