@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dankMaterialShell = {
+    dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.dgop.follows = "dgop";
