@@ -83,15 +83,14 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.caskaydia-mono
+    nerd-fonts.jetbrains-mono
     corefonts
   ];
   fonts.fontconfig = {
     defaultFonts = {
-      serif = [ "Noto Serif CJK SC" "serif" ];
-      sansSerif = [ "Noto Sans CJK SC" "Adwaita Sana" ];
-      monospace = [ "Noto Sans Mono CJK SC" "Adwaita Mono" ];
+      serif = [ "Noto Serif CJK SC" "Noto Serif" ];
+      sansSerif = [ "Noto Sans CJK SC" "Noto Sans" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK SC" ];
     };
   };
 
