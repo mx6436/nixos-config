@@ -193,7 +193,7 @@
     # fcitx5 recommends not to set this variable with wayland compositor
     # but niri has a bug which disables the pop-up menus
     # See https://github.com/YaLTeR/niri/issues/454
-    # GTK_IM_MODULE = lib.mkForce "";
+    GTK_IM_MODULE = lib.mkForce "";
 
     NIXOS_OZONE_WL = "1"; # Wayland support for vscode
   };
