@@ -355,17 +355,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1766256027,
-        "narHash": "sha256-G3gEnlcJ9sLz2buyGvNIi7SsRQqHVLckeuwic1Xe1vQ=",
-        "ref": "refs/heads/main",
-        "rev": "e01c53195972459813bc13d754b07bed7e828286",
-        "revCount": 2,
-        "type": "git",
-        "url": "file:///home/mx/source/reliquary-archiver-flake"
+        "lastModified": 1766260201,
+        "narHash": "sha256-sUKqo8Wxv/vq8nunoFmQTkX9mRLubnVJ/hKU5SYBlw0=",
+        "owner": "mx6436",
+        "repo": "reliquary-archiver-flake",
+        "rev": "a743f035fa881f3a0666a44c64c44e6f7a56530f",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/mx/source/reliquary-archiver-flake"
+        "owner": "mx6436",
+        "repo": "reliquary-archiver-flake",
+        "type": "github"
       }
     },
     "root": {

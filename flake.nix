@@ -40,7 +40,7 @@
     };
 
     reliquary-archiver = {
-      url = "git+file:///home/mx/source/reliquary-archiver-flake";
+      url = "github:mx6436/reliquary-archiver-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
