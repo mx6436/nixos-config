@@ -81,9 +81,6 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
-      alias ls 'eza --group-directories-first'
-      alias ll 'eza -l --group-directories-first'
-      alias la 'eza -la --group-directories-first'
 
       # muticd
       function multicd
@@ -91,14 +88,13 @@
       end
       abbr --add dotdot --regex '^\.\.+$' --function multicd
 
-      # init starship
-      if status is-interactive && test $XDG_SESSION_TYPE = wayland
-          starship init fish | source
+      alias ls 'eza --group-directories-first'
+      alias ll 'eza -l --group-directories-first'
+      alias la 'eza -la --group-directories-first'
 
-          # enable icons only on wayland
-          alias ls 'eza --group-directories-first --icons=auto'
-          alias ll 'eza -l --group-directories-first --icons=auto'
-          alias la 'eza -la --group-directories-first --icons=auto'
+      # init starship
+      if status is-interactive
+          starship init fish | source
       end
     '';
   };
