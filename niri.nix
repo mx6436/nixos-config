@@ -96,7 +96,7 @@
       "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
       # 应用程序启动
-      "Mod+T".action.spawn = "alacritty";
+      "Mod+T".action.spawn = "kitty";
       "Mod+A".action.spawn = "firefox";
       "Mod+E".action.spawn = "nautilus";
 
