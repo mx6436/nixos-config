@@ -355,11 +355,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766260201,
-        "narHash": "sha256-sUKqo8Wxv/vq8nunoFmQTkX9mRLubnVJ/hKU5SYBlw0=",
+        "lastModified": 1766376715,
+        "narHash": "sha256-MriFStqfkOdSdYl2LPNBAyvC6d5zRK++7DYvaLEcA3E=",
         "owner": "mx6436",
         "repo": "reliquary-archiver-flake",
-        "rev": "a743f035fa881f3a0666a44c64c44e6f7a56530f",
+        "rev": "ed69dd22cd4f9caf84b62850a93529dd2f1ea024",
         "type": "github"
       },
       "original": {
