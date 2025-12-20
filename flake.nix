@@ -38,6 +38,11 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    reliquary-archiver = {
+      url = "git+file:///home/mx/source/reliquary-archiver-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:
@@ -87,6 +92,11 @@
           # programs.honkers-launcher.enable = true;
           # programs.wavey-launcher.enable = true;
           programs.sleepy-launcher.enable = true;
+        }
+
+        inputs.reliquary-archiver.nixosModules.default
+        {
+          programs.reliquary-archiver.enable = true;
         }
       ];
     };
