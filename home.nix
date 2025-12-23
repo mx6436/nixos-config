@@ -36,7 +36,6 @@
     qq
     mangohud
     splayer
-    typora
     lutris
     papers
     qgis saga
