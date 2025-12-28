@@ -16,19 +16,7 @@
   # changes in each release.
   home.stateVersion = "25.11";
 
-  home.packages = with pkgs;
-  let
-    qgis = pkgs.qgis.override {
-      extraPythonPackages = ps: with ps; [
-        pillow
-        matplotlib
-        scipy
-        pandas
-        scikit-learn
-      ];
-    };
-  in
-  [
+  home.packages = with pkgs; [
     starship
     eza
     nixd
@@ -38,7 +26,6 @@
     splayer
     lutris
     papers
-    qgis saga
   ];
 
   # Let Home Manager install and manage itself.
