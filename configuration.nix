@@ -183,6 +183,14 @@
     gnome-text-editor
     libreoffice-qt-fresh
     hunspell hunspellDicts.en_US # Spellcheck
+
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
+    gst_all_1.gst-vaapi
   ];
 
   environment.variables = {
@@ -195,6 +203,8 @@
     GTK_IM_MODULE = lib.mkForce "";
 
     NIXOS_OZONE_WL = "1"; # Wayland support for vscode
+
+    GST_PLUGIN_PATH = "/run/current-system/sw/lib/gstreamer-1.0/";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
