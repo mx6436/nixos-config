@@ -184,6 +184,7 @@
     libreoffice-qt-fresh
     hunspell hunspellDicts.en_US # Spellcheck
 
+    (ffmpeg-full.override { withUnfree = true; })
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good
