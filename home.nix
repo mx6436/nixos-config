@@ -26,6 +26,7 @@
     splayer
     lutris
     papers
+    showtime
   ];
 
   # Let Home Manager install and manage itself.
