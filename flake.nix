@@ -43,6 +43,11 @@
       url = "github:mx6436/reliquary-archiver-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    game-input-helper = {
+      url = "path:./game-input-helper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }:

@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.niri.settings = {
@@ -92,13 +92,20 @@
       }
     ];
 
-    binds = {
+    binds =
+    let
+      scriptPackage = inputs.game-input-helper.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      scriptBin = "${scriptPackage}/bin/game-input-helper";
+    in
+    {
       "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
       # 应用程序启动
       "Mod+T".action.spawn = "kitty";
       "Mod+A".action.spawn = "firefox";
       "Mod+E".action.spawn = "nautilus";
+
+      "Mod+G".action.spawn = [ scriptBin ];
 
       # 窗口与工作区管理 - 基础
       "Mod+O" = {

@@ -131,6 +131,22 @@
         "type": "github"
       }
     },
+    "game-input-helper": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./game-input-helper",
+        "type": "path"
+      },
+      "original": {
+        "path": "./game-input-helper",
+        "type": "path"
+      },
+      "parent": []
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -373,6 +389,7 @@
         "aagl": "aagl",
         "dgop": "dgop",
         "dms": "dms",
+        "game-input-helper": "game-input-helper",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "niri": "niri",
