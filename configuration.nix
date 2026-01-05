@@ -173,7 +173,7 @@
   environment.systemPackages = with pkgs; [
     helix # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
-    rustup
+    rust-bin.stable.latest.default
 
     wl-clipboard
     xwayland-satellite

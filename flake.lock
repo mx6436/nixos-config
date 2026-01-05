@@ -391,7 +391,8 @@
         "lanzaboote": "lanzaboote",
         "niri": "niri",
         "nixpkgs": "nixpkgs_2",
-        "reliquary-archiver": "reliquary-archiver"
+        "reliquary-archiver": "reliquary-archiver",
+        "rust-overlay": "rust-overlay_3"
       }
     },
     "rust-overlay": {
@@ -425,6 +426,26 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "9fe44e7f05b734a64a01f92fc51ad064fb0a884f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_3": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767581716,
+        "narHash": "sha256-FUbiUzdrGkLou37OGfb4vCLPnqdSIvtmJBxjh2iljiE=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "1d3f83babdd21e16bf5cfe0f1efcb4f49ee1bc2c",
         "type": "github"
       },
       "original": {
