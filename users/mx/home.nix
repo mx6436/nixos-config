@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -14,6 +14,7 @@
     ../../home/features/gaming.nix
     ../../home/features/vscode.nix
     ../../home/features/wechat.nix
+    ../../home/features/theme.nix
   ];
 
   programs.git = {
