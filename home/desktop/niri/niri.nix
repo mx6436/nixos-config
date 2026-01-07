@@ -1,6 +1,17 @@
-{ inputs, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
 
