@@ -25,7 +25,6 @@
     ../../modules/features/gaming.nix
     ../../modules/features/onedrive.nix
     ../../modules/features/reliquary-archiver.nix
-    ../../modules/features/rust.nix
     ../../modules/features/secureboot.nix
   ];
 

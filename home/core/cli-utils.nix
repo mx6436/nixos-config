@@ -17,4 +17,6 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
+
+  programs.direnv.enable = true;
 }

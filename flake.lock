@@ -356,8 +356,7 @@
         "niri": "niri",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
-        "reliquary-archiver": "reliquary-archiver",
-        "rust-overlay": "rust-overlay_3"
+        "reliquary-archiver": "reliquary-archiver"
       }
     },
     "rust-overlay": {
@@ -391,26 +390,6 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "cb24c5cc207ba8e9a4ce245eedd2d37c3a988bc1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_3": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1768012928,
-        "narHash": "sha256-HFFVQaux1JoOjEvgBT0ASk1Je+jsipyO5c91FoLMed8=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "312b4371e72f644ffcff25b23615195e3b390643",
         "type": "github"
       },
       "original": {
