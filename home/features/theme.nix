@@ -39,7 +39,7 @@
     theme = {
       name = "Adwaita";
       # 使用官方的 GNOME 主题包
-      package = pkgs.gnome-themes-extra;
+      # package = pkgs.gnome-themes-extra;
     };
 
     iconTheme = {
