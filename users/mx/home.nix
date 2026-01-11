@@ -10,7 +10,6 @@
     ../../home/core
     ../../home/desktop
 
-    ../../home/features/arknights.nix
     ../../home/features/fish.nix
     ../../home/features/gaming.nix
     ../../home/features/vscode.nix
