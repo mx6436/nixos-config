@@ -22,6 +22,7 @@
 
     ../../modules/features/clash-verge.nix
     ../../modules/features/fcitx5.nix
+    ../../modules/features/fish.nix
     ../../modules/features/gaming.nix
     ../../modules/features/onedrive.nix
     ../../modules/features/waydroid.nix
