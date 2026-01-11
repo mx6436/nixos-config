@@ -14,6 +14,8 @@
     ];
   };
 
+  nix.settings.trusted-users = [ "mx" ];
+
   imports = [
     ./hardware-configuration.nix
 
