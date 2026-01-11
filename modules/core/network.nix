@@ -9,4 +9,6 @@
     allowedTCPPorts = [ ];
     allowedUDPPortRanges = [ ];
   };
+
+  networking.nftables.enable = true;
 }
