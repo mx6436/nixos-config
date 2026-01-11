@@ -108,7 +108,7 @@
 
       # 应用程序启动
       "Mod+T".action.spawn = "kitty";
-      "Mod+A".action.spawn = "firefox";
+      "Mod+Return".action.spawn = "firefox";
       "Mod+E".action.spawn = "nautilus";
 
       # 窗口与工作区管理 - 基础
@@ -234,11 +234,11 @@
       "Mod+Ctrl+8".action.move-column-to-workspace = 8;
       "Mod+Ctrl+9".action.move-column-to-workspace = 9;
 
-      # # 窗口吸收/排出
-      # "Mod+BracketLeft".action.consume-or-expel-window-left = { };
-      # "Mod+BracketRight".action.consume-or-expel-window-right = { };
-      # "Mod+Comma".action.consume-window-into-column = { };
-      # "Mod+Period".action.expel-window-from-column = { };
+      # 窗口吸收/排出
+      "Mod+BracketLeft".action.consume-or-expel-window-left = { };
+      "Mod+BracketRight".action.consume-or-expel-window-right = { };
+      "Mod+Comma".action.consume-window-into-column = { };
+      "Mod+Period".action.expel-window-from-column = { };
 
       # 布局调整
       "Mod+R".action.switch-preset-column-width = { };
@@ -256,9 +256,9 @@
       "Mod+Shift+Minus".action.set-window-height = "-10%";
       "Mod+Shift+Equal".action.set-window-height = "+10%";
 
-      # # 浮动窗口管理
-      # "Mod+V".action.toggle-window-floating = { };
-      # "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = { };
+      # 浮动窗口管理
+      "Mod+Space".action.toggle-window-floating = { };
+      "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = { };
 
       # 标签式列显示
       "Mod+W".action.toggle-column-tabbed-display = { };
