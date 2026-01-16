@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -15,10 +15,14 @@
   };
 
   nix.settings = inputs.aagl.nixConfig; # Set up Cachix
-  # programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
-  # programs.anime-games-launcher.enable = true;
+
+  programs.anime-game-launcher = {
+    enable = true;
+    package = pkgs.anime-game-launcher.override {
+      extraPkgs = pkgs: [
+        pkgs.bubblewrap
+      ];
+    };
+  };
   programs.honkers-railway-launcher.enable = true;
-  # programs.honkers-launcher.enable = true;
-  # programs.wavey-launcher.enable = true;
-  # programs.sleepy-launcher.enable = true;
 }
