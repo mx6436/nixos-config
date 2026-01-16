@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -35,6 +35,12 @@
     { device = "/dev/disk/by-uuid/4FCD-D30E";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/mnt/nvme0n1p4" =
+    { device = "/dev/disk/by-uuid/C608833408832293";
+      fsType = "ntfs3";
+      options = [ "rw" "uid=1000" "gid=100" "nofail" ];
     };
 
   swapDevices = [ ];
