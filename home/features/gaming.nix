@@ -5,9 +5,13 @@ let
 in
 {
   home.packages = with pkgs; [
-    lutris
     mangohud
     gameInputHelper
+    (lutris.override {
+      extraPkgs = pkgs: [
+        wineWowPackages.stagingFull
+      ];
+    })
   ];
 
   programs.niri.settings.binds = {
