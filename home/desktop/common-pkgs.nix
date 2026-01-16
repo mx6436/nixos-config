@@ -12,6 +12,7 @@
     firefox
     nautilus
     papers
+    loupe
     showtime
     splayer
     qq
