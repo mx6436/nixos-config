@@ -31,6 +31,12 @@
       options = [ "subvol=nix,compress=zstd,noatime" ];
     };
 
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/c636c2b5-5b02-4ebb-9e45-b6ae9454501a";
+      fsType = "btrfs";
+      options = [ "subvol=swap,noatime" ];
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/4FCD-D30E";
       fsType = "vfat";
@@ -43,7 +49,10 @@
       options = [ "rw" "uid=1000" "gid=100" "nofail" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 8*1024;
+  }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
