@@ -14,6 +14,8 @@
     papers
     loupe
     showtime
+    gnome-text-editor
+    obs-studio
     splayer
     qq
   ];

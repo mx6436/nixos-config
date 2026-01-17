@@ -6,6 +6,7 @@ in
 {
   home.packages = with pkgs; [
     mangohud
+    gamescope
     gameInputHelper
     (lutris.override {
       extraPkgs = pkgs: [
