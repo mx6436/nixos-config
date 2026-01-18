@@ -356,7 +356,8 @@
         "niri": "niri",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
-        "reliquary-archiver": "reliquary-archiver"
+        "reliquary-archiver": "reliquary-archiver",
+        "umu": "umu"
       }
     },
     "rust-overlay": {
@@ -410,6 +411,28 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "umu": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "packaging/nix",
+        "lastModified": 1765757739,
+        "narHash": "sha256-mFur6BsNkJm4tH0O4lkOaCVtZnEeNlw9xDkZUSnzHIU=",
+        "owner": "Open-Wine-Components",
+        "repo": "umu-launcher",
+        "rev": "bb5c870fe076e21fe60cb652b57365022fbfd77a",
+        "type": "github"
+      },
+      "original": {
+        "dir": "packaging/nix",
+        "owner": "Open-Wine-Components",
+        "repo": "umu-launcher",
         "type": "github"
       }
     },
