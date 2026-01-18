@@ -13,6 +13,7 @@ in
         wineWowPackages.stagingFull
       ];
     })
+    umu-launcher
   ];
 
   programs.niri.settings.binds = {
