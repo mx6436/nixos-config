@@ -7,6 +7,7 @@
     eza
     starship
     nixd
+    bubblewrap
   ];
 
   xdg.userDirs = {
