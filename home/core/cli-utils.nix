@@ -8,6 +8,7 @@
     starship
     nixd
     bubblewrap
+    inotify-tools
   ];
 
   xdg.userDirs = {
