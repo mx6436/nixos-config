@@ -15,6 +15,7 @@
     loupe
     showtime
     gnome-text-editor
+    wpsoffice-cn
     obs-studio
     splayer
     qq
