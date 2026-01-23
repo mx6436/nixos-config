@@ -15,6 +15,11 @@
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
 
+    input.keyboard = {
+      repeat-delay = 600;
+      repeat-rate = 25;
+    };
+
     outputs."eDP-1" = {
       mode = {
         width = 1920;
