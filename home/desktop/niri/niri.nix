@@ -36,9 +36,15 @@
 
       focus-ring = {
         width = 2;
-        active = { color = "#b4befe"; };
-        inactive = { color = "#505050"; };
-        urgent = { color = "#9b0000"; };
+        active = {
+          color = "#b4befe";
+        };
+        inactive = {
+          color = "#505050";
+        };
+        urgent = {
+          color = "#9b0000";
+        };
       };
     };
 
@@ -54,7 +60,13 @@
     ];
 
     spawn-at-startup = [
-      { argv = [ "bash" "-c" "wl-paste --watch cliphist store &"]; }    
+      {
+        argv = [
+          "bash"
+          "-c"
+          "wl-paste --watch cliphist store &"
+        ];
+      }
     ];
 
     hotkey-overlay.skip-at-startup = true;
@@ -67,7 +79,7 @@
       QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
     };
 
-    window-rules= [
+    window-rules = [
       {
         matches = [ { app-id = "r#\"^org\\.gnome\\.\"#"; } ];
         draw-border-with-background = false;

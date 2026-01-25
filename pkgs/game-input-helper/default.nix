@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     # 1. 休眠 0.6 秒 (等待 zenity 窗口弹出并获得焦点)
     # 2. 调用 fcitx5-remote -o (打开输入法/切换到中文)
     (sleep 0.6 && fcitx5-remote -s wbx) &
-  
+
     # 获取输入
     # 2>/dev/null 屏蔽一些 GTK 在 Wayland 下可能的报错噪音
     INPUT_TEXT=$(zenity --entry --title="游戏输入助手" --text="请输入文本:" --width=400 2>/dev/null)
