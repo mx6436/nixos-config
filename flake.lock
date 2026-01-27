@@ -173,6 +173,26 @@
         "type": "github"
       }
     },
+    "natfrp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769514220,
+        "narHash": "sha256-Yu4zZzj4celbuvSCepf4SzDwicbgda0QimgQanAUSjg=",
+        "owner": "mx6436",
+        "repo": "natfrp-flake",
+        "rev": "50d26f41254b9d73eddfbbf6002958714bd4d807",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mx6436",
+        "repo": "natfrp-flake",
+        "type": "github"
+      }
+    },
     "niri": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -353,6 +373,7 @@
         "dms": "dms",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
+        "natfrp": "natfrp",
         "niri": "niri",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",

@@ -30,6 +30,7 @@
     ../../modules/features/waydroid.nix
     ../../modules/features/reliquary-archiver.nix
     ../../modules/features/secureboot.nix
+    ../../modules/features/natfrp.nix
   ];
 
   # Creates a zram block device and uses it as a swap device
