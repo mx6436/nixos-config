@@ -29,6 +29,7 @@ let
         '';
       });
 in
+
 {
   home.packages = with pkgs; [
     mangohud
@@ -40,6 +41,7 @@ in
       ];
     })
     umu-launcher
+    prismlauncher
   ];
 
   programs.niri.settings.binds = {
