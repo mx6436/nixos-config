@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    xwayland-satellite
+    xwayland-satellite-unstable
   ];
 
   home.pointerCursor = {
