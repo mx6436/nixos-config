@@ -10,7 +10,14 @@
     wl-clipboard
     thunderbird
     firefox
-    nautilus
+    (nautilus.overrideAttrs (prev: {
+      buildInputs =
+        prev.buildInputs
+        ++ (with pkgs.gst_all_1; [
+          gst-plugins-good
+          gst-plugins-bad
+        ]);
+    }))
     papers
     loupe
     showtime
