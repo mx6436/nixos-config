@@ -21,10 +21,11 @@
 
     # Core features
     enableSystemMonitoring = true; # System monitoring widgets (dgop)
-    enableVPN = true; # VPN management widget
+    # enableVPN = true; # VPN management widget
     enableDynamicTheming = true; # Wallpaper-based theming (matugen)
     enableAudioWavelength = true; # Audio visualizer (cava)
     enableCalendarEvents = true; # Calendar integration (khal)
+    enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
 
     niri.includes = {
       enable = true;
@@ -93,6 +94,10 @@
       "Mod+V" = {
         action = dms-ipc "clipboard" "toggle";
         hotkey-overlay.title = "Toggle Clipboard Manager";
+      };
+      "Mod+M" = {
+        action = dms-ipc "processlist" "toggle";
+        hotkey-overlay.title = "Toggle Process List";
       };
     };
 }
