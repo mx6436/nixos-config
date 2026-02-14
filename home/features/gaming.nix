@@ -42,6 +42,7 @@ in
     })
     umu-launcher
     prismlauncher
+    osu-lazer-bin
   ];
 
   programs.niri.settings.binds = {
