@@ -27,7 +27,6 @@
     ../../modules/features/fish.nix
     ../../modules/features/gaming.nix
     ../../modules/features/onedrive.nix
-    ../../modules/features/waydroid.nix
     ../../modules/features/reliquary-archiver.nix
     ../../modules/features/secureboot.nix
     ../../modules/features/natfrp.nix
