@@ -9,8 +9,6 @@
     nixd
     bubblewrap
     inotify-tools
-
-    (ffmpeg-full.override { withUnfree = true; })
   ];
 
   xdg.userDirs = {
