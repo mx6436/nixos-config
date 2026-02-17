@@ -37,7 +37,7 @@ in
     gameInputHelper
     (lutris.override {
       extraPkgs = pkgs: [
-        wineWowPackages.stagingFull
+        wineWow64Packages.wayland
       ];
     })
     umu-launcher
