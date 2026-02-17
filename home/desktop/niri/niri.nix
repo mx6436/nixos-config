@@ -52,22 +52,11 @@
       }
     ];
 
-    spawn-at-startup = [
-      {
-        argv = [
-          "bash"
-          "-c"
-          "wl-paste --watch cliphist store &"
-        ];
-      }
-    ];
-
     hotkey-overlay.skip-at-startup = true;
 
     environment = {
       XDG_CURRENT_DESKTOP = "niri";
       QT_QPA_PLATFORM = "wayland";
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
     };
 
     window-rules = [
