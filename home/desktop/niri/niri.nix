@@ -5,13 +5,6 @@
     xwayland-satellite-unstable
   ];
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
-  };
-
   programs.niri.settings = {
     input.mouse.accel-profile = "flat";
 
@@ -75,8 +68,6 @@
       XDG_CURRENT_DESKTOP = "niri";
       QT_QPA_PLATFORM = "wayland";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      QT_QPA_PLATFORMTHEME = "gtk3";
-      QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
     };
 
     window-rules = [
