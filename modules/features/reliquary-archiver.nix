@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.reliquary-archiver.nixosModules.default
+    inputs.nur-packages.nixosModules.reliquary-archiver
   ];
 
   programs.reliquary-archiver.enable = true;

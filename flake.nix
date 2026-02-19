@@ -44,15 +44,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # --------- Misc ---------
+    # --------- NUR ---------
 
-    reliquary-archiver = {
-      url = "github:mx6436/reliquary-archiver-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    natfrp = {
-      url = "github:mx6436/natfrp-flake";
+    nur-packages = {
+      url = "github:mx6436/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
