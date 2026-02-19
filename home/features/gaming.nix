@@ -28,6 +28,7 @@ let
           "$out/bin/umu-run"
         '';
       });
+  sjmcl = inputs.nur-packages.packages.${system}.sjmcl;
 in
 
 {
@@ -43,6 +44,7 @@ in
     umu-launcher
     prismlauncher
     osu-lazer-bin
+    sjmcl
   ];
 
   programs.niri.settings.binds = {
