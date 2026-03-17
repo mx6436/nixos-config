@@ -26,5 +26,6 @@
     obs-studio
     splayer
     qq
+    cider-2
   ];
 }
