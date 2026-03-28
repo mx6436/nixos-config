@@ -44,6 +44,11 @@
   '';
   boot.kernelModules = [ "hid_apple" ];
 
+  # Add "quiet" to the kernel parameters to reduce boot messages.
+  boot.kernelParams = [
+    "quiet"
+  ];
+
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
 }
