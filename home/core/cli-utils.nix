@@ -2,13 +2,20 @@
 
 {
   home.packages = with pkgs; [
-    helix
-    git
-    eza
-    starship
-    nixd
     bubblewrap
+    cachix
+    cursor-cli
+    eza
+    file
+    git
+    helix
     inotify-tools
+    jq
+    nixd
+    python3
+    ripgrep
+    starship
+    tree
   ];
 
   xdg.userDirs = {
