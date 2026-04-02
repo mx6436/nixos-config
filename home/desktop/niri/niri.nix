@@ -98,6 +98,14 @@
         matches = [ { app-id = "r#\"org.quickshell$\"#"; } ];
         open-floating = true;
       }
+      {
+        matches = [
+          { app-id = "labwc"; }
+          { app-id = "wlroots"; }
+        ];
+        default-column-width.fixed = 1280;
+        default-window-height.fixed = 720;
+      }
     ];
 
     binds = {
