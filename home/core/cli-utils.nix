@@ -7,11 +7,13 @@
     cursor-cli
     eza
     file
+    gh
     git
     helix
     inotify-tools
     jq
     nixd
+    opencode
     python3
     ripgrep
     starship
