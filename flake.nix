@@ -61,8 +61,6 @@
       ...
     }:
     let
-      system = "x86_64-linux";
-
       hmConfig = {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -81,6 +79,16 @@
 
           home-manager.nixosModules.home-manager
           hmConfig
+
+          {
+            nixpkgs.overlays = [
+              (_: prev: {
+                openldap = prev.openldap.overrideAttrs {
+                  doCheck = !prev.stdenv.hostPlatform.isi686;
+                };
+              })
+            ];
+          }
         ];
       };
     };
