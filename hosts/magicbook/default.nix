@@ -11,6 +11,7 @@
       "wheel" # Enable ‘sudo’ for the user.
       "networkmanager"
       "gamemode"
+      "docker"
     ];
   };
 
@@ -29,6 +30,7 @@
     ../../modules/features/onedrive.nix
     ../../modules/features/reliquary-archiver.nix
     ../../modules/features/secureboot.nix
+    ../../modules/features/docker.nix
     ../../modules/features/natfrp.nix
   ];
 
