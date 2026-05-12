@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bubblewrap
     cachix
+    claude-code
     cursor-cli
     eza
     file
@@ -13,6 +14,7 @@
     inotify-tools
     jq
     nixd
+    nodejs
     opencode
     python3
     ripgrep
