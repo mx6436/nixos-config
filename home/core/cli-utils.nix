@@ -10,10 +10,8 @@
     file
     gh
     git
-    helix
     inotify-tools
     jq
-    nixd
     nodejs
     opencode
     python3
