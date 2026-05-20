@@ -103,6 +103,7 @@
           { app-id = "labwc"; }
           { app-id = "wlroots"; }
         ];
+        open-floating = true;
         default-column-width.fixed = 1280;
         default-window-height.fixed = 720;
       }
