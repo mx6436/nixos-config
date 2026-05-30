@@ -19,6 +19,7 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
+      set EDITOR hx
 
       # muticd
       function multicd
