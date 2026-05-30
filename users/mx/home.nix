@@ -10,11 +10,10 @@
     ../../home/core
     ../../home/desktop
 
+    ../../home/features/code.nix
     ../../home/features/fish.nix
     ../../home/features/gaming.nix
-    ../../home/features/helix.nix
     ../../home/features/theme.nix
-    ../../home/features/vscode.nix
     ../../home/features/wechat.nix
   ];
 
