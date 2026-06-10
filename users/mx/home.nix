@@ -10,7 +10,7 @@
     ../../home/core
     ../../home/desktop
 
-    ../../home/features/code.nix
+    ../../home/features/coding.nix
     ../../home/features/fish.nix
     ../../home/features/gaming.nix
     ../../home/features/theme.nix
