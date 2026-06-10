@@ -6,8 +6,11 @@
 }:
 
 let
+
   inherit (pkgs.stdenv.hostPlatform) system;
+
   gameInputHelper = pkgs.callPackage ../../pkgs/game-input-helper/default.nix { };
+
   umu-launcher =
     (inputs.umu.packages.${system}.default.override (prev: {
       umu-launcher-unwrapped = prev.umu-launcher-unwrapped.overrideAttrs {
@@ -28,23 +31,18 @@ let
           "$out/bin/umu-run"
         '';
       });
-  sjmcl = inputs.nur-packages.packages.${system}.sjmcl;
+
 in
 
 {
   home.packages = with pkgs; [
-    mangohud
-    gamescope
     gameInputHelper
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wineWow64Packages.wayland
-      ];
-    })
-    umu-launcher
-    prismlauncher
+    gamescope
+    lutris
+    mangohud
     osu-lazer-bin
-    sjmcl
+    prismlauncher
+    umu-launcher
   ];
 
   programs.niri.settings.binds = {
