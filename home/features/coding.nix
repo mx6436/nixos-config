@@ -17,6 +17,7 @@ let
     lua-language-server
     marksman
     neocmakelsp
+    nil
     nixd
     pyright
     ruff # python
@@ -69,6 +70,11 @@ in
   programs.vscode = {
     enable = true;
     package = pkgs.vscode.fhsWithPackages (ps: lsp-tools);
+  };
+
+  programs.zed-editor = {
+    enable = true;
+    extraPackages = lsp-tools;
   };
 
   programs.direnv.enable = true;
