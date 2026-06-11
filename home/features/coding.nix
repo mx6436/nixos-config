@@ -49,9 +49,12 @@ in
     (wrapWithTools codex)
     (wrapWithTools cursor-cli)
     (wrapWithTools opencode)
+    cargo
     go
     nodejs
     python3
+    rustc
+    stdenv.cc
   ];
 
   programs.helix = {
