@@ -27,6 +27,7 @@
     ../../modules/features/fcitx5.nix
     ../../modules/features/fish.nix
     ../../modules/features/gaming.nix
+    ../../modules/features/nix-ld.nix
     ../../modules/features/onedrive.nix
     ../../modules/features/reliquary-archiver.nix
     ../../modules/features/secureboot.nix
