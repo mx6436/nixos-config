@@ -57,17 +57,6 @@
     ];
   };
 
-  fileSystems."/mnt/nvme0n1p4" = {
-    device = "/dev/disk/by-uuid/C608833408832293";
-    fsType = "ntfs3";
-    options = [
-      "rw"
-      "uid=1000"
-      "gid=100"
-      "nofail"
-    ];
-  };
-
   swapDevices = [
     {
       device = "/swap/swapfile";
