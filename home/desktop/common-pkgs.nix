@@ -2,9 +2,19 @@
 
 {
   home.packages = with pkgs; [
-    wl-clipboard
-    thunderbird
+    cider-2
     firefox
+    gnome-text-editor
+    labwc
+    loupe
+    obs-studio
+    papers
+    qq
+    showtime
+    thunderbird
+    wl-clipboard
+    wpsoffice-cn
+
     (nautilus.overrideAttrs (prev: {
       buildInputs =
         prev.buildInputs
@@ -13,13 +23,5 @@
           gst-plugins-bad
         ]);
     }))
-    papers
-    loupe
-    showtime
-    gnome-text-editor
-    wpsoffice-cn
-    obs-studio
-    qq
-    cider-2
   ];
 }
