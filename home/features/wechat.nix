@@ -8,10 +8,10 @@
         pkgs.callPackage path (
           args
           // {
-            version = "4.1.1.4";
+            version = "latest";
             src = pkgs.fetchurl {
               url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
-              hash = "sha256-XxAvFnlljqurGPDgRr+DnuCKbdVvgXBPh02DLHY3Oz8=";
+              hash = "sha256-T1StKQLs1vb9xWgLc1R/gNVCO/RwsBI3pXmi5bPK7us=";
             };
           }
         );
