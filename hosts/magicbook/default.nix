@@ -29,7 +29,6 @@
     ../../modules/features/gaming.nix
     ../../modules/features/nix-ld.nix
     ../../modules/features/onedrive.nix
-    ../../modules/features/reliquary-archiver.nix
     ../../modules/features/secureboot.nix
     ../../modules/features/docker.nix
     ../../modules/features/natfrp.nix

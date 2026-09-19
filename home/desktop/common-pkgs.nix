@@ -2,9 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    cider-2
     firefox
-    gnome-text-editor
     labwc
     loupe
     obs-studio
