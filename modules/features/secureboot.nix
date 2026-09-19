@@ -1,22 +1,13 @@
 {
-  lib,
-  inputs,
+  pkgs,
   ...
 }:
 
 {
-  imports = [
-    inputs.lanzaboote.nixosModules.lanzaboote
+  environment.systemPackages = [
+    pkgs.sbctl
   ];
 
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-  };
-
-  # Lanzaboote currently replaces the systemd-boot module.
-  # This setting is usually set to true in configuration.nix
-  # generated at installation time. So we force it to false
-  # for now.
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  # https://wiki.nixos.org/wiki/Limine
+  boot.loader.limine.secureBoot.enable = true;
 }
