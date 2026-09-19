@@ -72,11 +72,6 @@ in
     package = pkgs.vscode.fhsWithPackages (ps: lsp-tools);
   };
 
-  programs.zed-editor = {
-    enable = true;
-    extraPackages = lsp-tools;
-  };
-
   programs.direnv.enable = true;
 
   home.sessionVariables = {
