@@ -45,10 +45,7 @@ in
 
 {
   home.packages = with pkgs; [
-    (wrapWithTools claude-code)
-    (wrapWithTools codex)
-    (wrapWithTools cursor-cli)
-    (wrapWithTools opencode)
+    (wrapWithTools pi-coding-agent)
     cargo
     go
     nodejs
