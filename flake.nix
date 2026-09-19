@@ -26,13 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # --------- Gaming ---------
-
-    umu = {
-      url = "github:Open-Wine-Components/umu-launcher?dir=packaging/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # --------- NUR ---------
 
     nur-packages = {
