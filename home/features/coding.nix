@@ -1,10 +1,14 @@
 {
+  config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
 let
+  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+
   lsp-tools = with pkgs; [
     bash-language-server
     clang-tools
@@ -30,28 +34,21 @@ let
     yaml-language-server
   ];
 
-  wrapWithTools =
-    pkg:
-    pkgs.symlinkJoin {
-      name = pkg.name;
-      paths = [ pkg ];
-      nativeBuildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram "$out/bin/${baseNameOf (lib.getExe pkg)}" \
-          --suffix PATH : ${lib.makeBinPath lsp-tools}
-      '';
-    };
+  pi-coding-agent = pkgs.symlinkJoin {
+    name = "pi-coding-agent";
+    paths = [ pkgsUnstable.pi-coding-agent ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram "$out/bin/${baseNameOf (lib.getExe pkgsUnstable.pi-coding-agent)}" \
+        --prefix PATH : ${lib.makeBinPath (lsp-tools ++ [ pkgs.nodejs_latest ])} \
+        --set NPM_CONFIG_PREFIX "${config.home.homeDirectory}/.pi/npm"
+    '';
+  };
 in
 
 {
-  home.packages = with pkgs; [
-    (wrapWithTools pi-coding-agent)
-    cargo
-    go
-    nodejs
-    python3
-    rustc
-    stdenv.cc
+  home.packages = [
+    pi-coding-agent
   ];
 
   programs.helix = {
