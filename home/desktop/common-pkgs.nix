@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -7,12 +11,12 @@
     loupe
     obs-studio
     papers
-    qq
     showtime
     thunderbird
     wl-clipboard
     wpsoffice-cn
 
+    pkgs-unstable.qq # older version download links will be invalid
     (nautilus.overrideAttrs (prev: {
       buildInputs =
         prev.buildInputs

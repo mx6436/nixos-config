@@ -1,14 +1,12 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
-  inputs,
   ...
 }:
 
 let
-  pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-
   lsp-tools = with pkgs; [
     bash-language-server
     clang-tools
@@ -36,10 +34,10 @@ let
 
   pi-coding-agent = pkgs.symlinkJoin {
     name = "pi-coding-agent";
-    paths = [ pkgsUnstable.pi-coding-agent ];
+    paths = [ pkgs-unstable.pi-coding-agent ];
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
-      wrapProgram "$out/bin/${baseNameOf (lib.getExe pkgsUnstable.pi-coding-agent)}" \
+      wrapProgram "$out/bin/${baseNameOf (lib.getExe pkgs-unstable.pi-coding-agent)}" \
         --prefix PATH : ${lib.makeBinPath (lsp-tools ++ [ pkgs.nodejs_latest ])} \
         --set NPM_CONFIG_PREFIX "${config.home.homeDirectory}/.pi/npm"
     '';
