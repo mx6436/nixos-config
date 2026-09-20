@@ -37,8 +37,7 @@
   # Creates a zram block device and uses it as a swap device
   zramSwap.enable = true;
 
-  # Use linux-zen kernel
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Fix fnmode
   boot.extraModprobeConfig = ''
