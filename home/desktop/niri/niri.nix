@@ -85,12 +85,12 @@
         }
         {
           match = [
-            { _props.app-id = "labwc"; }
-            { _props.app-id = "wlroots"; }
+            { _props.title = "Endfield"; }
           ];
-          open-floating = true;
-          default-column-width.fixed = 1280;
-          default-window-height.fixed = 720;
+          min-width = 1280;
+          max-width = 1280;
+          min-height = 720;
+          max-height = 720;
         }
       ];
 
