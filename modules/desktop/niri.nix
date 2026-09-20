@@ -10,6 +10,11 @@
   programs.niri.enable = true;
   programs.niri.withUWSM = true;
 
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "niri";
+  };
+
   environment.variables = {
     # Default settings are GTK_IM_MODULE=fcitx
     # fcitx5 recommends not to set this variable with wayland compositor
