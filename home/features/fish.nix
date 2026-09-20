@@ -27,6 +27,10 @@
       end
       abbr --add dotdot --regex '^\.\.+$' --function multicd
 
+      # Alt+Backspace deletes one path component instead of the whole token
+      bind alt-backspace backward-kill-path-component
+      bind ctrl-alt-h backward-kill-path-component
+
       alias ls 'eza --group-directories-first'
       alias ll 'eza -l --group-directories-first'
       alias la 'eza -la --group-directories-first'
