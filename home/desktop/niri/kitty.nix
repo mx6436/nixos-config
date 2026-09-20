@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.kitty = {
@@ -18,4 +18,10 @@
       background_opacity = 0.95;
     };
   };
+
+  # Terminal=true entries (Helix.desktop, ...) need a terminal: DMS falls back to a
+  # hardcoded "xterm" when $TERMINAL is unset, and gio/xdg-open/OpenURI portal only
+  # look for xdg-terminal-exec on Wayland.
+  home.packages = [ pkgs.xdg-terminal-exec ];
+  home.sessionVariables.TERMINAL = "kitty";
 }
