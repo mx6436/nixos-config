@@ -21,6 +21,7 @@ let
     neocmakelsp
     nil
     nixd
+    nixfmt
     pyright
     ruff # python
     rust-analyzer
