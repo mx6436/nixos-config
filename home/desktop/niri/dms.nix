@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   inputs,
   ...
 }:
@@ -8,16 +6,10 @@
 {
   imports = [
     inputs.dms.homeModules.dank-material-shell
-    inputs.dms.homeModules.niri
   ];
 
   programs.dank-material-shell = {
     enable = true;
-
-    systemd = {
-      enable = true; # Systemd service for auto-start
-      restartIfChanged = true; # Auto-restart dms.service when dankMaterialShell changes
-    };
 
     # Core features
     enableSystemMonitoring = true; # System monitoring widgets (dgop)
@@ -26,78 +18,191 @@
     enableAudioWavelength = true; # Audio visualizer (cava)
     enableCalendarEvents = true; # Calendar integration (khal)
     enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
-
-    niri.includes = {
-      enable = true;
-    };
   };
 
-  programs.niri.settings.binds =
-    with config.lib.niri.actions;
-    let
-      dms-ipc = spawn "dms" "ipc";
-    in
-    {
+  # DMS 运行时生成的配置片段
+  wayland.windowManager.niri.extraConfig = ''
+    include optional=true "dms/alttab.kdl"
+    include optional=true "dms/binds.kdl"
+    include optional=true "dms/colors.kdl"
+    include optional=true "dms/cursor.kdl"
+    include optional=true "dms/layout.kdl"
+    include optional=true "dms/outputs.kdl"
+    include optional=true "dms/windowrules.kdl"
+    include optional=true "dms/wpblur.kdl"
+  '';
+
+  wayland.windowManager.niri.settings = {
+    spawn-at-startup = [
+      [
+        "dms"
+        "run"
+      ]
+    ];
+
+    layer-rule = [
+      {
+        match._props.namespace = "^quickshell$";
+        place-within-backdrop = true;
+      }
+      {
+        match._props.namespace = "dms:blurwallpaper";
+        place-within-backdrop = true;
+      }
+    ];
+
+    window-rule = [
+      {
+        match._props.app-id = "org.quickshell";
+        open-floating = true;
+      }
+    ];
+
+    binds = {
       "Mod+D" = {
-        action = dms-ipc "spotlight" "toggle";
-        hotkey-overlay.title = "Toggle Application Launcher";
+        spawn = [
+          "dms"
+          "ipc"
+          "spotlight"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Application Launcher";
       };
       "Mod+N" = {
-        action = dms-ipc "notifications" "toggle";
-        hotkey-overlay.title = "Toggle Notification Center";
+        spawn = [
+          "dms"
+          "ipc"
+          "notifications"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Notification Center";
       };
-      # "Mod+Comma" = {
-      #   action = dms-ipc "settings" "toggle";
-      #   hotkey-overlay.title = "Toggle Settings";
-      # };
+      "Mod+Comma" = {
+        spawn = [
+          "dms"
+          "ipc"
+          "settings"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Settings";
+      };
       "Mod+P" = {
-        action = dms-ipc "notepad" "toggle";
-        hotkey-overlay.title = "Toggle Notepad";
+        spawn = [
+          "dms"
+          "ipc"
+          "notepad"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Notepad";
       };
       "Super+Alt+L" = {
-        action = dms-ipc "lock" "lock";
-        hotkey-overlay.title = "Toggle Lock Screen";
+        spawn = [
+          "dms"
+          "ipc"
+          "lock"
+          "lock"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Lock Screen";
       };
       "Mod+X" = {
-        action = dms-ipc "powermenu" "toggle";
-        hotkey-overlay.title = "Toggle Power Menu";
+        spawn = [
+          "dms"
+          "ipc"
+          "powermenu"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Power Menu";
       };
       "XF86AudioRaiseVolume" = {
-        allow-when-locked = true;
-        action = dms-ipc "audio" "increment" "3";
+        spawn = [
+          "dms"
+          "ipc"
+          "audio"
+          "increment"
+          "3"
+        ];
+        _props."allow-when-locked" = true;
       };
       "XF86AudioLowerVolume" = {
-        allow-when-locked = true;
-        action = dms-ipc "audio" "decrement" "3";
+        spawn = [
+          "dms"
+          "ipc"
+          "audio"
+          "decrement"
+          "3"
+        ];
+        _props."allow-when-locked" = true;
       };
       "XF86AudioMute" = {
-        allow-when-locked = true;
-        action = dms-ipc "audio" "mute";
+        spawn = [
+          "dms"
+          "ipc"
+          "audio"
+          "mute"
+        ];
+        _props."allow-when-locked" = true;
       };
       "XF86AudioMicMute" = {
-        allow-when-locked = true;
-        action = dms-ipc "audio" "micmute";
+        spawn = [
+          "dms"
+          "ipc"
+          "audio"
+          "micmute"
+        ];
+        _props."allow-when-locked" = true;
       };
       "XF86MonBrightnessUp" = {
-        allow-when-locked = true;
-        action = dms-ipc "brightness" "increment" "5" "";
+        spawn = [
+          "dms"
+          "ipc"
+          "brightness"
+          "increment"
+          "5"
+          ""
+        ];
+        _props."allow-when-locked" = true;
       };
       "XF86MonBrightnessDown" = {
-        allow-when-locked = true;
-        action = dms-ipc "brightness" "decrement" "5" "";
+        spawn = [
+          "dms"
+          "ipc"
+          "brightness"
+          "decrement"
+          "5"
+          ""
+        ];
+        _props."allow-when-locked" = true;
       };
       "Mod+Alt+N" = {
-        allow-when-locked = true;
-        action = dms-ipc "night" "toggle";
-        hotkey-overlay.title = "Toggle Night Mode";
+        spawn = [
+          "dms"
+          "ipc"
+          "night"
+          "toggle"
+        ];
+        _props = {
+          "allow-when-locked" = true;
+          "hotkey-overlay-title" = "Toggle Night Mode";
+        };
       };
       "Mod+V" = {
-        action = dms-ipc "clipboard" "toggle";
-        hotkey-overlay.title = "Toggle Clipboard Manager";
+        spawn = [
+          "dms"
+          "ipc"
+          "clipboard"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Clipboard Manager";
       };
       "Mod+M" = {
-        action = dms-ipc "processlist" "toggle";
-        hotkey-overlay.title = "Toggle Process List";
+        spawn = [
+          "dms"
+          "ipc"
+          "processlist"
+          "toggle"
+        ];
+        _props."hotkey-overlay-title" = "Toggle Process List";
       };
     };
+  };
 }

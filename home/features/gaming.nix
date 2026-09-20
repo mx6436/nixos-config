@@ -36,7 +36,7 @@ in
     umu-launcher
   ];
 
-  programs.niri.settings.binds = {
-    "Mod+G".action.spawn = [ (lib.getExe gameInputHelper) ];
+  wayland.windowManager.niri.settings.binds = {
+    "Mod+G".spawn = lib.getExe gameInputHelper;
   };
 }

@@ -1,19 +1,14 @@
 {
   lib,
-  pkgs,
   inputs,
   ...
 }:
 
 {
-  imports = [
-    inputs.niri.nixosModules.niri
-  ];
-
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  imports = [ inputs.niri-nix.nixosModules.default ];
 
   programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri.withUWSM = true;
 
   environment.variables = {
     # Default settings are GTK_IM_MODULE=fcitx

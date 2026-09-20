@@ -4,9 +4,7 @@
   imports = [
     ./font.nix
     ./misc.nix
+    ./niri.nix
     ./pipewire.nix
-
-    ./niri/niri.nix
-    ./niri/dms.nix
   ];
 }
