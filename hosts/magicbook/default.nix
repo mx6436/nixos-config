@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # Define your hostname.
@@ -37,13 +41,19 @@
   # Creates a zram block device and uses it as a swap device
   zramSwap.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ ryzen-smu ];
 
   # Fix fnmode
   boot.extraModprobeConfig = ''
     options hid_apple fnmode=2
   '';
-  boot.kernelModules = [ "hid_apple" ];
+
+  boot.kernelModules = [
+    "hid_apple"
+    "ryzen_smu"
+  ];
 
   # Add "quiet" to the kernel parameters to reduce boot messages.
   boot.kernelParams = [
