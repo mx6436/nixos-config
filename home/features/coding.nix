@@ -7,27 +7,21 @@
 }:
 
 let
-  lsp-tools = with pkgs; [
-    bash-language-server
-    clang-tools
-    cmake
-    delve # Go
-    fish-lsp
-    gopls
-    golangci-lint-langserver
-    lldb
-    lua-language-server
+  devTools = with pkgs; [
     marksman
-    neocmakelsp
-    nil
     nixd
     nixfmt
-    pyright
-    ruff # python
-    rust-analyzer
+  ];
+
+  lspTools = with pkgs; [
+    bash-language-server
+    fish-lsp
+    golangci-lint
+    golangci-lint-langserver
+    lua-language-server
+    neocmakelsp
+    nil
     systemd-language-server
-    taplo # toml
-    ty # python
     typescript-language-server
     vscode-json-languageserver
     yaml-language-server
@@ -39,7 +33,7 @@ let
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram "$out/bin/${baseNameOf (lib.getExe pkgs-unstable.pi-coding-agent)}" \
-        --prefix PATH : ${lib.makeBinPath (lsp-tools ++ [ pkgs.nodejs_latest ])} \
+        --prefix PATH : ${lib.makeBinPath (devTools ++ [ pkgs.nodejs_latest ])} \
         --set NPM_CONFIG_PREFIX "${config.home.homeDirectory}/.pi/npm"
     '';
   };
@@ -50,13 +44,19 @@ in
     pi-coding-agent
   ];
 
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    silent = true;
+  };
+
   programs.helix = {
     enable = true;
     settings = {
       theme = "catppuccin_mocha";
       editor."soft-wrap".enable = true;
     };
-    extraPackages = lsp-tools;
+    extraPackages = devTools ++ lspTools;
     languages.language = [
       {
         name = "nix";
@@ -68,10 +68,17 @@ in
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode.fhsWithPackages (ps: lsp-tools);
+    package = pkgs.vscode.fhsWithPackages (
+      ps:
+      with ps;
+      devTools
+      ++ [
+        # maa-framework dependencies
+        pipewire
+        libei
+      ]
+    );
   };
-
-  programs.direnv.enable = true;
 
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland support for vscode
