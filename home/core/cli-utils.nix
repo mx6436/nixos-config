@@ -12,6 +12,7 @@
     inotify-tools
     jq
     ripgrep
+    ryzenadj
     starship
     tree
   ];
