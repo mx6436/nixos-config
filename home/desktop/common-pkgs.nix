@@ -11,6 +11,7 @@
     loupe
     obs-studio
     papers
+    qqmusic
     showtime
     thunderbird
     wl-clipboard
