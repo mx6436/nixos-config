@@ -31,9 +31,8 @@
       bind alt-backspace backward-kill-path-component
       bind ctrl-alt-h backward-kill-path-component
 
-      alias ls 'eza --group-directories-first'
-      alias ll 'eza -l --group-directories-first'
-      alias la 'eza -la --group-directories-first'
+      alias ls 'eza -la --group-directories-first --header --icons --git'
+      alias ll 'eza -l --group-directories-first --header --icons'
 
       # init starship
       if status is-interactive && string match -q "*kitty*" $TERM
