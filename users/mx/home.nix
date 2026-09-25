@@ -23,5 +23,10 @@
       user.name = "mx6436";
       user.email = "mx6436@foxmail.com";
     };
+    signing = {
+      key = "2445FD97CA13A9C9E0011C45C215E03F56C3427A";
+      format = "openpgp";
+      signByDefault = true;
+    };
   };
 }
