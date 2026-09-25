@@ -3,6 +3,7 @@
 {
   imports = [
     ./bootloader.nix
+    ./gnupg.nix
     ./locale.nix
     ./mirror.nix
     ./misc.nix
