@@ -6,6 +6,7 @@
     bubblewrap
     cachix
     eza
+    fastfetch
     file
     gh
     git
@@ -14,6 +15,7 @@
     ripgrep
     ryzenadj
     starship
+    tldr
     tree
   ];
 
