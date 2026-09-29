@@ -13,7 +13,6 @@
     inotify-tools
     jq
     ripgrep
-    ryzenadj
     starship
     tldr
     tree

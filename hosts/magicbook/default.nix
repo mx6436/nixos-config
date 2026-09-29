@@ -55,10 +55,13 @@
     "ryzen_smu"
   ];
 
-  # Add "quiet" to the kernel parameters to reduce boot messages.
   boot.kernelParams = [
     "quiet"
   ];
+
+  programs.ryzen-monitor-ng.enable = true;
+
+  environment.systemPackages = [ pkgs.ryzenadj ];
 
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
