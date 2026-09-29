@@ -5,11 +5,10 @@
 
     # --------- Core ---------
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -42,10 +41,6 @@
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {
           inherit inputs;
-          pkgs-unstable = import inputs.nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
         };
         home-manager.users.mx = import ./users/mx/home.nix;
       };

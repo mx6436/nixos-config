@@ -1,23 +1,22 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
 }:
 
 {
   home.packages = with pkgs; [
+    cider-2
     firefox
     labwc
     loupe
     obs-studio
     papers
+    qq
     showtime
     thunderbird
     wl-clipboard
     wpsoffice-cn
 
-    pkgs-unstable.cider-2
-    pkgs-unstable.qq # older version download links will be invalid
     (nautilus.overrideAttrs (prev: {
       buildInputs =
         prev.buildInputs
