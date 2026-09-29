@@ -41,7 +41,7 @@
   # Creates a zram block device and uses it as a swap device
   zramSwap.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ ryzen-smu ];
 
