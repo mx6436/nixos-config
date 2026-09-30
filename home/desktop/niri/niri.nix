@@ -71,6 +71,10 @@
           draw-border-with-background = false;
         }
         {
+          match._props.app-id._raw = ''r#"^code$"#'';
+          open-maximized = true;
+        }
+        {
           match._props.is-active = false;
           opacity = 0.9;
         }
