@@ -89,12 +89,13 @@
         }
         {
           match = [
-            { _props.title = "Endfield"; }
+            { _props.title._raw = ''r#"^Endfield$"#''; }
           ];
           min-width = 1280;
           max-width = 1280;
           min-height = 720;
           max-height = 720;
+          open-floating = true;
         }
       ];
 
