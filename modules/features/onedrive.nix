@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.onedriver ];
+  services.onedrive.enable = true;
 }
