@@ -1,17 +1,9 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 
 let
-  devTools = with pkgs; [
-    marksman
-    nixd
-    nixfmt
-  ];
-
   lspTools = with pkgs; [
     bash-language-server
     fish-lsp
@@ -20,26 +12,18 @@ let
     lua-language-server
     neocmakelsp
     nil
+    nixd
+    nixfmt
     systemd-language-server
     typescript-language-server
     vscode-json-languageserver
     yaml-language-server
   ];
-
-  pi-coding-agent = pkgs.symlinkJoin {
-    name = "pi-coding-agent";
-    paths = [ pkgs.pi-coding-agent ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram "$out/bin/${baseNameOf (lib.getExe pkgs.pi-coding-agent)}" \
-        --prefix PATH : ${lib.makeBinPath (devTools ++ [ pkgs.nodejs_latest ])} \
-        --set NPM_CONFIG_PREFIX "${config.home.homeDirectory}/.pi/npm"
-    '';
-  };
 in
 
 {
-  home.packages = [
+  home.packages = with pkgs; [
+    claude-code
     pi-coding-agent
   ];
 
@@ -55,7 +39,7 @@ in
       theme = "catppuccin_mocha";
       editor."soft-wrap".enable = true;
     };
-    extraPackages = devTools ++ lspTools;
+    extraPackages = lspTools;
     languages.language = [
       {
         name = "nix";
@@ -68,10 +52,9 @@ in
   programs.vscode = {
     enable = true;
     package = pkgs.vscode.fhsWithPackages (
-      ps:
-      with ps;
-      devTools
-      ++ [
+      ps: with ps; [
+        nixd
+        nixfmt
         # maa-framework dependencies
         pipewire
         libei
