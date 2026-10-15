@@ -15,7 +15,6 @@ let
     nixd
     nixfmt
     systemd-language-server
-    typescript-language-server
     vscode-json-languageserver
     yaml-language-server
   ];
