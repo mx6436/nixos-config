@@ -10,6 +10,7 @@
     libei
     libgcc
     pipewire
+    vulkan-loader
     # Tauri
     cairo
     gdk-pixbuf
