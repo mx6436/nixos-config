@@ -43,8 +43,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ ryzen-smu ];
-
   # Fix fnmode
   boot.extraModprobeConfig = ''
     options hid_apple fnmode=2
@@ -52,16 +50,11 @@
 
   boot.kernelModules = [
     "hid_apple"
-    "ryzen_smu"
   ];
 
   boot.kernelParams = [
     "quiet"
   ];
-
-  programs.ryzen-monitor-ng.enable = true;
-
-  environment.systemPackages = [ pkgs.ryzenadj ];
 
   # Allow unfree software
   nixpkgs.config.allowUnfree = true;
