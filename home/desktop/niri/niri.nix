@@ -89,14 +89,14 @@
         }
         {
           match = [
-            { _props.title._raw = ''r#"^Endfield$"#''; }
-            { _props.title._raw = ''r#"^鹰角启动器$"#''; }
-            { _props.title._raw = ''r#"^UIPlatform$"#''; }
+            { _props.app-id = "labwc"; }
           ];
-          min-width = 1280;
-          max-width = 1280;
-          min-height = 720;
-          max-height = 720;
+          default-column-width = {
+            fixed = 1280;
+          };
+          default-window-height = {
+            fixed = 720;
+          };
         }
       ];
 
