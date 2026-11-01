@@ -15,7 +15,6 @@
     showtime
     thunderbird
     wl-clipboard
-    wpsoffice-cn
 
     (nautilus.overrideAttrs (prev: {
       buildInputs =
