@@ -14,6 +14,7 @@
     qq
     showtime
     thunderbird
+    wechat
     wl-clipboard
 
     (nautilus.overrideAttrs (prev: {

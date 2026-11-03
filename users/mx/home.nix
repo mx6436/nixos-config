@@ -14,7 +14,6 @@
     ../../home/features/fish.nix
     ../../home/features/gaming.nix
     ../../home/features/theme.nix
-    ../../home/features/wechat.nix
   ];
 
   programs.git = {
