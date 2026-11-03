@@ -27,7 +27,7 @@
     ../../modules/core
     ../../modules/desktop
 
-    ../../modules/features/clash-verge.nix
+    ../../modules/features/clash-nyanpasu.nix
     ../../modules/features/fcitx5.nix
     ../../modules/features/fish.nix
     ../../modules/features/gaming.nix
