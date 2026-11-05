@@ -22,7 +22,7 @@ in
 
 {
   home.packages = with pkgs; [
-    claude-code
+    nodejs
     pi-coding-agent
   ];
 
