@@ -54,9 +54,6 @@
         modules = [
           ./hosts/magicbook
 
-          # Temporary: lutris FHS env still pulls gtk2, which nixpkgs marks broken.
-          { nixpkgs.config.problems.handlers."gtk+".broken = "warn"; }
-
           home-manager.nixosModules.home-manager
           hmConfig
         ];
