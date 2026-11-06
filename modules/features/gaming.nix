@@ -1,6 +1,11 @@
 { ... }:
 
 {
+  boot.kernelModules = [ "ntsync" ];
+  services.udev.extraRules = ''
+    KERNEL=="ntsync", MODE="0666"
+  '';
+
   programs.gamemode.enable = true;
 
   programs.steam = {
