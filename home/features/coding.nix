@@ -10,7 +10,6 @@ let
     golangci-lint
     golangci-lint-langserver
     lua-language-server
-    neocmakelsp
     nil
     nixd
     nixfmt
