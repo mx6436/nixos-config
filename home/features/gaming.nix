@@ -26,7 +26,6 @@ in
     })
     mangohud
     osu-lazer-bin
-    prismlauncher
     umu-launcher
   ];
 
